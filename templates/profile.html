@@ -50,7 +50,7 @@ Dota stats
      <td>
          <table>
             <td>
-                <img style="padding: 2px;" class="border border-5 {% if el['match_result'] == 'Win' %} border-success {% else %} border-danger {% endif %}rounded" src="https://cdn.dota2.com/apps/dota2/images/heroes/{{ el['hero_name'].split('npc_dota_hero_')[1] }}_sb.png"/>
+                <a href="/profile/{{ el['match_id'] }}"><img style="padding: 2px;" class="border border-5 {% if el['match_result'] == 'Win' %} border-success {% else %} border-danger {% endif %}rounded" src="https://cdn.dota2.com/apps/dota2/images/heroes/{{ el['hero_name'].split('npc_dota_hero_')[1] }}_sb.png"/></a>
             </td>
             <td class="ps-1">
                 <a href="/profile/{{ el['match_id'] }}">{{ el['hero'] }} ></a>
