@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}
+Dota stats
+{%endblock%}
+{% block body%}
+
+
+
+<div class="container pt-3">
+    <div class="row">
+        <div class="col-2" style="width: max-content;">
+            <img class="rounded-circle" src="{{ ProfileInfo['avatar']}}" alt="">
+        </div>
+        <div class="col fs-5">
+            <span class="fs-2 pe-2">{{ ProfileInfo['personaname']}}</span>
+            <a title="Steam link" href="{{ ProfileInfo['profileurl']}}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-steam mb-2" viewBox="0 0 16 16">
+                    <path d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 1.769A2.198 2.198 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.046 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.217 2.217 0 0 1-1.312-1.568L.33 10.333Z"></path>
+                    <path d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.705 1.705 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027Zm2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048Z"></path>
+                </svg>
+            </a>
+
+                <div class="pt-4">
+                    <span class="text-black-50">WINS</span>
+                    <span class="px-3 text-black-50" style="padding-left: 16px;">LOSSES</span>
+                    <span class="text-black-50">WINRATE</span>
+                </div>
+                <span class="text-success"><b>{{ ProfileInfo['win']}}</b></span>
+                <span class="ps-4 text-danger"><b>{{ ProfileInfo['lose']}}</b></span>
+                <span class="ps-5 text-black"><b>{{ ProfileInfo['winrate']}}%</b></span>
+        </div>
+        <div class="col-2 mt-4 me-5" id="rank">
+                <img  src="{{ ProfileInfo['rank_star'] }}" alt="" id="rank_1">
+                <img  src="{{ ProfileInfo['rank_icon'] }}" alt="" id="rank_2">
+        </div>
+    </div>
+</div>
+
+<table class="table container align-middle table-hover">
+  <thead>
+  <th scope="col" title="Hero">Hero</th>
+  <th scope="col" title="Skill">Skill</th>
+  <th scope="col" title="Result" class="text-center">Date</th>
+  <th scope="col" title="Duration">Duration</th>
+  <th scope="col" title="Kill/Death/Assists">K/D/A</th>
+  </thead>
+  <tbody class="container">
+   {% for el in AllMatchInfo %}
+   <tr>
+     <td>
+         <table>
+            <td>
+                <img style="padding: 2px;" class="border border-5 {% if el['match_result'] == 'Win' %} border-success {% else %} border-danger {% endif %}rounded" src="https://cdn.dota2.com/apps/dota2/images/heroes/{{ el['hero_name'].split('npc_dota_hero_')[1] }}_sb.png"/>
+            </td>
+            <td class="ps-1">
+                <a href="/profile/{{ el['match_id'] }}">{{ el['hero'] }} ></a>
+                <div class="ps-2" style="font-size: 10px;" title="">
+                    <span style="font-size: 15px;"><b>{{ el['lobby_type'] }}</b> </span>
+                    <span title="Party size {{ el['party_size']}}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill mb-2" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        </svg>
+                        <span>{{ el['party_size'] }}</span>
+                    </span>
+                </div>
+             </td>
+         </table>
+     </td>
+    <td>
+       <p class="fs-5">{{ el['skill'] }}</p>
+    </td>
+     <td>
+        <p class="text-black text-center">{{ el['start_time']}}</p>
+     </td>
+     <td>{{ el['duration'] }}</td>
+     <td>{{ el['kills'] }}/{{ el['deaths'] }}/{{ el['assists'] }}</td>
+   </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

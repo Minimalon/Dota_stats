@@ -1,0 +1,133 @@
+    {% extends 'base.html' %}
+
+    {% block title %}
+    About me
+    {% endblock %}
+
+    {% block body%}
+    <!--<div class="text-center">-->
+    <!--    <h1>Артур</h1>-->
+    <!--    <p>Люблю кисак, роллы и пиццу</p>-->
+    <!--</div>-->
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col align-self-center">
+                {% if result[0]["radiant_win"] %}
+                    <p class="fs-3 badge bg-success my-5">Radiant Victory</p>
+                {% else %}
+                   <p class="fs-1 badge bg-danger">Dire Victory</p>
+                {% endif %}
+            </div>
+            <div class="col text-center">
+                <span style="font-size: 48px; color: rgb(102, 187, 106);">{{ result[0]["radiant_score"] }}</span>
+                <span class="px-4 fs-5"><b>{{ result[0]["duration"] }}</b></span>
+                <span style="font-size: 48px; color: rgb(255, 76, 76);">{{ result[0]["dire_score"] }}</span>
+            </div>
+            <div class="col text-center align-middle fs-5">
+                <span class="text-black-50">MATCH ID</span>
+                <p class="text-black">{{ result[0]['match_id'] }}</p>
+            </div>
+            <div class="row align-self-topr">
+                <div class="col"></div>
+                <div class="col text-center fs-5 text-black-50" title="The match has started">{{ result[0]["start_time"] }}</div>
+                            <div class="col"></div>
+
+            </div>
+        </div>
+    </div>
+
+
+                                                <!--Block Radiant-->
+    <h5 class="container">Team Radiant</h5>
+         <table class="table container text-center align-middle table-hover">
+            <thead class="table-success">
+                <th scope="col">Player</th>
+                <th scope="col" class="" title="Level">LVL</th>
+                <th scope="col" title="Kills">K</th>
+                <th scope="col"title="Deaths">D</th>
+                <th scope="col" title="Assists">A</th>
+                <th scope="col" class="ps-4" title="Total lasthits creeps">Creeps</th>
+                <th scope="col" title="Creeps per minute">CPM</th>
+                <th scope="col" class="px-5" title="Net worth">NET</th>
+                <th scope="col" title="Gold per minute">GPM</th>
+                <th scope="col" title="Experience per minute">XPM</th>
+                <th scope="col" class="text-end" title="Heroes damage">HD</th>
+                <th scope="col" title="Tower damage">TD</th>
+                <th scope="col" class="text-start" title="Heroes heals">HH</th>
+            </thead>
+            <tbody>
+             {% for el in result %}
+                {% if el["side"] == "Radiant" %}
+                    <tr>
+                    <td class="d-flex">
+                        <a><img src="{{ el['hero_png'] }}" class="p-2" /></a>
+                        <a href="{{ el['profileurl'] }}" title="Steam profile url" class="text-black text-decoration-none text-reset pt-3">{{ el["nickname"] }}</a>
+                    </td>
+                    <div>
+                        <td>{{ el["level"] }}</td>
+                    </div>
+                        <td>{{ el["kills"] }}</td>
+                        <td>{{ el["deaths"] }}</td>
+                        <td>{{ el["assists"] }}</td>
+                        <td class="ps-4 ">{{ el["last_hits"] }}</td>
+                        <td>{{ el["CPM"] }}</td>
+                        <td>{{ el["total_value"] }}</td>
+                        <td>{{ el["gold_per_min"] }}</td>
+                        <td>{{ el["xp_per_min"] }}</td>
+                        <td class="ps-4  text-end">{{ el["hero_damage"] }}</td>
+                        <td>{{ el["tower_damage"] }}</td>
+                        <td class=" text-start">{{ el["hero_healing"] }}</td>
+                <!--      <tr><td><a href="{{ el['profileurl'] }}"><img src="{{ el['avatar'] }}"/></a></td></tr>-->
+                  </tr>
+                {% endif %}
+             {% endfor %}
+            </tbody>
+        </table>
+
+                                                <!--Block Dire-->
+    <h5 class="container pt-3">Team Dire</h5>
+         <table class="table container text-center align-middle table-hover">
+            <thead class="table-danger">
+                <th scope="col">Player</th>
+                <th scope="col" class="" title="Level">LVL</th>
+                <th scope="col" title="Kills">K</th>
+                <th scope="col" title="Deaths">D</th>
+                <th scope="col" title="Assists">A</th>
+                <th scope="col" class="ps-4" title="Total lasthits creeps">Creeps</th>
+                <th scope="col" title="Creeps per minute">CPM</th>
+                <th scope="col" class="px-5" title="Net worth">NET</th>
+                <th scope="col" title="Gold per minute">GPM</th>
+                <th scope="col" title="Experience per minute">XPM</th>
+                <th scope="col" class="text-end" title="Heroes damage">HD</th>
+                <th scope="col" title="Tower damage">TD</th>
+                <th scope="col" class="text-start" title="Heroes heals">HH</th>
+            </thead>
+            <tbody>
+             {% for el in result %}
+                {% if el["side"] == "Dire" %}
+                    <tr>
+                    <td class="d-flex">
+                        <a><img src="{{ el['hero_png'] }}" class="p-2" /></a>
+                        <a href="{{ el['profileurl'] }}" title="Steam profile url" class="text-black text-decoration-none text-reset pt-3">{{ el["nickname"] }}</a>
+                    </td>
+                    <div>
+                        <td>{{ el["level"] }}</td>
+                    </div>
+                        <td>{{ el["kills"] }}</td>
+                        <td>{{ el["deaths"] }}</td>
+                        <td>{{ el["assists"] }}</td>
+                        <td class="ps-4 ">{{ el["last_hits"] }}</td>
+                        <td>{{ el["CPM"] }}</td>
+                        <td>{{ el["total_value"] }}</td>
+                        <td>{{ el["gold_per_min"] }}</td>
+                        <td>{{ el["xp_per_min"] }}</td>
+                        <td class="ps-4  text-end">{{ el["hero_damage"] }}</td>
+                        <td>{{ el["tower_damage"] }}</td>
+                        <td class=" text-start">{{ el["hero_healing"] }}</td>
+                <!--      <tr><td><a href="{{ el['profileurl'] }}"><img src="{{ el['avatar'] }}"/></a></td></tr>-->
+                  </tr>
+                {% endif %}
+             {% endfor %}
+            </tbody>
+        </table>
+    {% endblock %}
