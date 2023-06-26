@@ -33,10 +33,10 @@ def get_All_match_info(player_id):
     AllMatchInfo = json.loads(AllMatchInfo_response.text)
     AllMatchInfo_result = []
 
-    with open(os.path.join(dir_path, "/json/ALMatchInfo.json"), "w+", encoding="utf-8") as f:
+    with open(os.path.join(dir_path, "json/ALMatchInfo.json"), "w+", encoding="utf-8") as f:
         for i in AllMatchInfo:
             # Heroes
-            with open(os.path.join(dir_path, "/json/heroes.json"), "r") as heroes:
+            with open(os.path.join(dir_path, "json/heroes.json"), "r") as heroes:
                 heroes = json.load(heroes)
                 for index in heroes:
                     if index["id"] == i["hero_id"]:
@@ -44,7 +44,7 @@ def get_All_match_info(player_id):
                         hero_name = index["name"]
 
             # lobby_type
-            with open(os.path.join(dir_path, "/json/lobby_type.json"), "r") as lobbyType:
+            with open(os.path.join(dir_path, "json/lobby_type.json"), "r") as lobbyType:
                 lobbyType = json.load(lobbyType)
                 lobby_type = lobbyType[f"{i['lobby_type']}"]["name"].split("_")
                 lobby_type.remove("lobby")
