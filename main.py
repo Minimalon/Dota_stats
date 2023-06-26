@@ -4,6 +4,8 @@
 
 import datetime
 import io
+import os
+
 import json
 import re
 
@@ -29,10 +31,10 @@ def get_All_match_info(player_id):
     AllMatchInfo = json.loads(AllMatchInfo_response.text)
     AllMatchInfo_result = []
 
-    with open("json/ALMatchInfo.json", "w+", encoding="utf-8") as f:
+    with open(os.getcwd() + "/json/ALMatchInfo.json", "w+", encoding="utf-8") as f:
         for i in AllMatchInfo:
             # Heroes
-            with open("json/heroes.json", "r") as heroes:
+            with open(os.getcwd() + "/json/heroes.json", "r") as heroes:
                 heroes = json.load(heroes)
                 for index in heroes:
                     if index["id"] == i["hero_id"]:
@@ -40,7 +42,7 @@ def get_All_match_info(player_id):
                         hero_name = index["name"]
 
             # lobby_type
-            with open("json/lobby_type.json", "r") as lobbyType:
+            with open(os.getcwd() + "/json/lobby_type.json", "r") as lobbyType:
                 lobbyType = json.load(lobbyType)
                 lobby_type = lobbyType[f"{i['lobby_type']}"]["name"].split("_")
                 lobby_type.remove("lobby")
@@ -95,7 +97,7 @@ def get_match_info(match_id):
     matchInfo_response = requests.get(matchInfo_url)
     matchInfo = json.loads(matchInfo_response.text)
 
-    with open("json/matchInfo.json", "w+", encoding="utf-8") as f:
+    with open(os.getcwd() + "/json/matchInfo.json", "w+", encoding="utf-8") as f:
         f.write(json.dumps(matchInfo, sort_keys=True, indent=4, ensure_ascii=False))
 
 
@@ -104,7 +106,7 @@ def get_heroes():
     heroes_response = requests.get(heroes_url)
     heroes = json.loads(heroes_response.text)
 
-    with open("json/heroes.json", "w+", encoding='utf-8') as f:
+    with open(os.getcwd() + "/json/heroes.json", "w+", encoding='utf-8') as f:
         f.write(json.dumps(heroes, sort_keys=True, indent=4, ensure_ascii=False))
 
 
@@ -129,21 +131,21 @@ def get_data(steam_url):
     get_heroes()
 
     steamProfile = get_steam_profile(player_id)
-    with open("json/SteamProfile.json", "w+", encoding='utf-8') as f:
+    with open(os.getcwd() + "/json/SteamProfile.json", "w+", encoding='utf-8') as f:
         f.write(json.dumps(steamProfile, sort_keys=True, indent=4))
 
     wl = get_wl_profile(player_id)
-    with open("json/wl.json", "w+", encoding='utf-8') as f:
+    with open(os.getcwd() + "/json/wl.json", "w+", encoding='utf-8') as f:
         f.write(json.dumps(wl, sort_keys=True, indent=4))
 
 
 def short_info_profile():
     profile_list = []
-    with open("json/ProfileInfo.json", "w+", encoding='utf-8') as GameProfileInfo:
-        with open("json/SteamProfile.json", "r", encoding='utf-8') as SteamProfile:
+    with open(os.getcwd() + "/json/ProfileInfo.json", "w+", encoding='utf-8') as GameProfileInfo:
+        with open(os.getcwd() + "/json/SteamProfile.json", "r", encoding='utf-8') as SteamProfile:
             SteamProfile = json.load(SteamProfile)
 
-        with open("json/wl.json", "r", encoding='utf-8') as wl:
+        with open(os.getcwd() + "/json/wl.json", "r", encoding='utf-8') as wl:
             wl = json.load(wl)
 
         if f"/static/images/rank_star/{list(str(SteamProfile['rank_tier']))[1]}.png" != "0":
@@ -168,7 +170,7 @@ def short_info_profile():
 
 # Parsing info from json files
 def create_result():
-    with open("json/matchInfo.json", "r", encoding='utf-8') as f:
+    with open(os.getcwd() + "/json/matchInfo.json", "r", encoding='utf-8') as f:
         f = json.load(f)
         result = []
 
@@ -185,7 +187,7 @@ def create_result():
                 profileurl = ''
 
             # if str(i["account_id"]) == get_steam_info(steam_url)[0]:
-            with open("json/heroes.json", "r") as heroes:
+            with open(os.getcwd() + "/json/heroes.json", "r") as heroes:
                 heroes = json.load(heroes)
                 for b in heroes:
                     if b["id"] == i["hero_id"]:
@@ -237,7 +239,7 @@ def create_result():
                 'start_time': datetime.datetime.fromtimestamp(i["start_time"]).strftime('%d %B %Y %H:%M:%S'),
             })
 
-        with io.open("json/result.json", "w+", encoding='utf-8') as f:
+        with io.open(os.getcwd() + "/json/result.json", "w+", encoding='utf-8') as f:
             f.write(json.dumps(result, ensure_ascii=False, sort_keys=True, indent=4))
 
 

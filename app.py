@@ -1,4 +1,5 @@
 import datetime
+import os
 
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
@@ -24,11 +25,11 @@ def FindMenu():
 
 @app.route("/profile")
 def profile():
-    with open("json/ALMatchInfo.json", encoding="utf-8") as AllMatchInfo:
+    with open(os.getcwd() + "/json/ALMatchInfo.json", encoding="utf-8") as AllMatchInfo:
         AllMatchInfo = json.load(AllMatchInfo)
-    with open("json/heroes.json", encoding="utf-8") as heroes:
+    with open(os.getcwd() + "/json/heroes.json", encoding="utf-8") as heroes:
         heroes = json.load(heroes)
-    with open("json/ProfileInfo.json", encoding="utf-8") as ProfileInfo:
+    with open(os.getcwd() + "/json/ProfileInfo.json", encoding="utf-8") as ProfileInfo:
         ProfileInfo = json.load(ProfileInfo)
 
     return render_template("profile.html",
@@ -42,13 +43,13 @@ def profile():
 def match_info(match_id):
     api.get_match_info(match_id)
     api.create_result()
-    with open("json/result.json", encoding="utf-8") as result:
+    with open(os.getcwd() + "/json/result.json", encoding="utf-8") as result:
         result = json.load(result)
     return render_template("match_info.html", result=result)
 
 @app.route('/aboutme')
 def index_aboutme():
-    with open("json/result.json", encoding="utf-8") as result:
+    with open(os.getcwd() + "/json/result.json", encoding="utf-8") as result:
         result = json.load(result)
         first_record = result[0]
         columns = list(first_record.keys())
