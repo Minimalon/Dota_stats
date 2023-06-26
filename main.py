@@ -4,19 +4,18 @@
 
 import datetime
 import io
+import json
 import re
 
 import requests
 from bs4 import BeautifulSoup
-from fake_useragent import UserAgent
-
-import json
+from user_agent import generate_user_agent
 
 
 # Parsing site for info
 def get_steam_info(steam_url):
     id_url = f"https://steamid.io/lookup/{steam_url.split('/')[4]}"
-    response = requests.get(url=id_url, headers={'user-agent': f'{UserAgent().random}'})
+    response = requests.get(url=id_url, headers={'user-agent': f'{generate_user_agent()}'})
     soup = BeautifulSoup(response.text, 'lxml')
     steam32ID = soup.find_all("dd", {"class": "value short"})[1].find("a")
     steam32ID = re.split(r":|]", steam32ID.text)[-2]

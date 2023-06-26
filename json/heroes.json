@@ -23,7 +23,6 @@
             "Initiator",
             "Durable",
             "Disabler",
-            "Jungler",
             "Carry"
         ]
     },
@@ -33,7 +32,7 @@
         "legs": 4,
         "localized_name": "Bane",
         "name": "npc_dota_hero_bane",
-        "primary_attr": "int",
+        "primary_attr": "all",
         "roles": [
             "Support",
             "Disabler",
@@ -51,7 +50,6 @@
         "roles": [
             "Carry",
             "Disabler",
-            "Jungler",
             "Nuker",
             "Initiator"
         ]
@@ -66,8 +64,7 @@
         "roles": [
             "Support",
             "Disabler",
-            "Nuker",
-            "Jungler"
+            "Nuker"
         ]
     },
     {
@@ -116,7 +113,7 @@
         "legs": 2,
         "localized_name": "Mirana",
         "name": "npc_dota_hero_mirana",
-        "primary_attr": "agi",
+        "primary_attr": "all",
         "roles": [
             "Carry",
             "Support",
@@ -214,14 +211,13 @@
         "legs": 6,
         "localized_name": "Sand King",
         "name": "npc_dota_hero_sand_king",
-        "primary_attr": "str",
+        "primary_attr": "all",
         "roles": [
             "Initiator",
             "Disabler",
             "Support",
             "Nuker",
-            "Escape",
-            "Jungler"
+            "Escape"
         ]
     },
     {
@@ -276,7 +272,7 @@
         "legs": 2,
         "localized_name": "Vengeful Spirit",
         "name": "npc_dota_hero_vengefulspirit",
-        "primary_attr": "agi",
+        "primary_attr": "all",
         "roles": [
             "Support",
             "Initiator",
@@ -291,7 +287,7 @@
         "legs": 2,
         "localized_name": "Windranger",
         "name": "npc_dota_hero_windrunner",
-        "primary_attr": "int",
+        "primary_attr": "all",
         "roles": [
             "Carry",
             "Support",
@@ -445,10 +441,9 @@
         "legs": 0,
         "localized_name": "Enigma",
         "name": "npc_dota_hero_enigma",
-        "primary_attr": "int",
+        "primary_attr": "all",
         "roles": [
             "Disabler",
-            "Jungler",
             "Initiator",
             "Pusher"
         ]
@@ -511,7 +506,7 @@
         "legs": 2,
         "localized_name": "Beastmaster",
         "name": "npc_dota_hero_beastmaster",
-        "primary_attr": "str",
+        "primary_attr": "all",
         "roles": [
             "Initiator",
             "Disabler",
@@ -538,7 +533,7 @@
         "legs": 0,
         "localized_name": "Venomancer",
         "name": "npc_dota_hero_venomancer",
-        "primary_attr": "agi",
+        "primary_attr": "all",
         "roles": [
             "Support",
             "Nuker",
@@ -676,7 +671,7 @@
         "legs": 2,
         "localized_name": "Dazzle",
         "name": "npc_dota_hero_dazzle",
-        "primary_attr": "int",
+        "primary_attr": "all",
         "roles": [
             "Support",
             "Nuker",
@@ -689,7 +684,7 @@
         "legs": 2,
         "localized_name": "Clockwerk",
         "name": "npc_dota_hero_rattletrap",
-        "primary_attr": "str",
+        "primary_attr": "all",
         "roles": [
             "Initiator",
             "Disabler",
@@ -721,7 +716,6 @@
         "primary_attr": "int",
         "roles": [
             "Carry",
-            "Jungler",
             "Pusher",
             "Escape",
             "Nuker"
@@ -737,7 +731,6 @@
         "roles": [
             "Carry",
             "Durable",
-            "Jungler",
             "Escape",
             "Disabler"
         ]
@@ -748,10 +741,9 @@
         "legs": 2,
         "localized_name": "Dark Seer",
         "name": "npc_dota_hero_dark_seer",
-        "primary_attr": "int",
+        "primary_attr": "all",
         "roles": [
             "Initiator",
-            "Jungler",
             "Escape",
             "Disabler"
         ]
@@ -791,7 +783,6 @@
         "primary_attr": "int",
         "roles": [
             "Support",
-            "Jungler",
             "Pusher",
             "Durable",
             "Disabler"
@@ -831,7 +822,7 @@
         "legs": 8,
         "localized_name": "Broodmother",
         "name": "npc_dota_hero_broodmother",
-        "primary_attr": "agi",
+        "primary_attr": "all",
         "roles": [
             "Carry",
             "Pusher",
@@ -883,10 +874,9 @@
         "legs": 2,
         "localized_name": "Batrider",
         "name": "npc_dota_hero_batrider",
-        "primary_attr": "int",
+        "primary_attr": "all",
         "roles": [
             "Initiator",
-            "Jungler",
             "Disabler",
             "Escape"
         ]
@@ -897,10 +887,9 @@
         "legs": 2,
         "localized_name": "Chen",
         "name": "npc_dota_hero_chen",
-        "primary_attr": "int",
+        "primary_attr": "all",
         "roles": [
             "Support",
-            "Jungler",
             "Pusher"
         ]
     },
@@ -954,7 +943,6 @@
         "primary_attr": "agi",
         "roles": [
             "Carry",
-            "Jungler",
             "Durable",
             "Disabler"
         ]
@@ -1052,11 +1040,10 @@
         "legs": 2,
         "localized_name": "Lycan",
         "name": "npc_dota_hero_lycan",
-        "primary_attr": "str",
+        "primary_attr": "all",
         "roles": [
             "Carry",
             "Pusher",
-            "Jungler",
             "Durable",
             "Escape"
         ]
@@ -1067,7 +1054,7 @@
         "legs": 2,
         "localized_name": "Brewmaster",
         "name": "npc_dota_hero_brewmaster",
-        "primary_attr": "str",
+        "primary_attr": "all",
         "roles": [
             "Carry",
             "Initiator",
@@ -1096,11 +1083,10 @@
         "legs": 2,
         "localized_name": "Lone Druid",
         "name": "npc_dota_hero_lone_druid",
-        "primary_attr": "agi",
+        "primary_attr": "all",
         "roles": [
             "Carry",
             "Pusher",
-            "Jungler",
             "Durable"
         ]
     },
@@ -1156,7 +1142,7 @@
         "legs": 2,
         "localized_name": "Ogre Magi",
         "name": "npc_dota_hero_ogre_magi",
-        "primary_attr": "int",
+        "primary_attr": "str",
         "roles": [
             "Support",
             "Nuker",
@@ -1212,7 +1198,7 @@
         "legs": 6,
         "localized_name": "Nyx Assassin",
         "name": "npc_dota_hero_nyx_assassin",
-        "primary_attr": "agi",
+        "primary_attr": "all",
         "roles": [
             "Disabler",
             "Nuker",
@@ -1246,8 +1232,7 @@
         "roles": [
             "Support",
             "Nuker",
-            "Disabler",
-            "Jungler"
+            "Disabler"
         ]
     },
     {
@@ -1256,7 +1241,7 @@
         "legs": 0,
         "localized_name": "Io",
         "name": "npc_dota_hero_wisp",
-        "primary_attr": "str",
+        "primary_attr": "all",
         "roles": [
             "Support",
             "Escape",
@@ -1269,7 +1254,7 @@
         "legs": 2,
         "localized_name": "Visage",
         "name": "npc_dota_hero_visage",
-        "primary_attr": "int",
+        "primary_attr": "all",
         "roles": [
             "Support",
             "Nuker",
@@ -1340,7 +1325,7 @@
         "legs": 4,
         "localized_name": "Magnus",
         "name": "npc_dota_hero_magnataur",
-        "primary_attr": "str",
+        "primary_attr": "all",
         "roles": [
             "Initiator",
             "Disabler",
@@ -1354,7 +1339,7 @@
         "legs": 2,
         "localized_name": "Timbersaw",
         "name": "npc_dota_hero_shredder",
-        "primary_attr": "str",
+        "primary_attr": "all",
         "roles": [
             "Nuker",
             "Durable",
@@ -1407,7 +1392,7 @@
         "legs": 2,
         "localized_name": "Abaddon",
         "name": "npc_dota_hero_abaddon",
-        "primary_attr": "str",
+        "primary_attr": "all",
         "roles": [
             "Support",
             "Carry",
@@ -1449,7 +1434,7 @@
         "legs": 6,
         "localized_name": "Techies",
         "name": "npc_dota_hero_techies",
-        "primary_attr": "int",
+        "primary_attr": "all",
         "roles": [
             "Nuker",
             "Disabler"
@@ -1519,7 +1504,7 @@
         "legs": 2,
         "localized_name": "Phoenix",
         "name": "npc_dota_hero_phoenix",
-        "primary_attr": "str",
+        "primary_attr": "all",
         "roles": [
             "Support",
             "Nuker",
@@ -1548,7 +1533,7 @@
         "legs": 2,
         "localized_name": "Winter Wyvern",
         "name": "npc_dota_hero_winter_wyvern",
-        "primary_attr": "int",
+        "primary_attr": "all",
         "roles": [
             "Support",
             "Disabler",
@@ -1588,7 +1573,7 @@
         "legs": 2,
         "localized_name": "Dark Willow",
         "name": "npc_dota_hero_dark_willow",
-        "primary_attr": "int",
+        "primary_attr": "all",
         "roles": [
             "Support",
             "Nuker",
@@ -1602,7 +1587,7 @@
         "legs": 2,
         "localized_name": "Pangolier",
         "name": "npc_dota_hero_pangolier",
-        "primary_attr": "agi",
+        "primary_attr": "all",
         "roles": [
             "Carry",
             "Nuker",
@@ -1646,7 +1631,7 @@
         "legs": 2,
         "localized_name": "Void Spirit",
         "name": "npc_dota_hero_void_spirit",
-        "primary_attr": "int",
+        "primary_attr": "all",
         "roles": [
             "Carry",
             "Escape",
@@ -1660,7 +1645,7 @@
         "legs": 2,
         "localized_name": "Snapfire",
         "name": "npc_dota_hero_snapfire",
-        "primary_attr": "str",
+        "primary_attr": "all",
         "roles": [
             "Support",
             "Nuker",
@@ -1700,13 +1685,39 @@
         "legs": 2,
         "localized_name": "Marci",
         "name": "npc_dota_hero_marci",
-        "primary_attr": "str",
+        "primary_attr": "all",
         "roles": [
             "Support",
             "Carry",
             "Initiator",
             "Disabler",
             "Escape"
+        ]
+    },
+    {
+        "attack_type": "Melee",
+        "id": 137,
+        "legs": 2,
+        "localized_name": "Primal Beast",
+        "name": "npc_dota_hero_primal_beast",
+        "primary_attr": "str",
+        "roles": [
+            "Initiator",
+            "Durable",
+            "Disabler"
+        ]
+    },
+    {
+        "attack_type": "Ranged",
+        "id": 138,
+        "legs": 2,
+        "localized_name": "Muerta",
+        "name": "npc_dota_hero_muerta",
+        "primary_attr": "int",
+        "roles": [
+            "Carry",
+            "Nuker",
+            "Disabler"
         ]
     }
 ]
