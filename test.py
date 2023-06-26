@@ -27,7 +27,7 @@ def get_All_match_info(player_id):
     AllMatchInfo_response = requests.get(AllMatchInfo_url)
     AllMatchInfo = json.loads(AllMatchInfo_response.text)
 
-    with open("ALMatchInfo.json", "w+") as f:
+    with open("ALMatchInfo.json"), "w+") as f:
         f.write(json.dumps(AllMatchInfo, sort_keys=True, indent=4))
     return AllMatchInfo[0]["match_id"]
 
@@ -37,7 +37,7 @@ def get_match_info(match_id):
     matchInfo_response = requests.get(matchInfo_url)
     matchInfo = json.loads(matchInfo_response.text)
 
-    with open("matchInfo.json", "w+") as f:
+    with open("matchInfo.json"), "w+") as f:
         f.write(json.dumps(matchInfo, sort_keys=True, indent=4))
 
 
@@ -46,7 +46,7 @@ def get_heroes():
     heroes_response = requests.get(heroes_url)
     heroes = json.loads(heroes_response.text)
 
-    with open("heroes.json", "w+") as f:
+    with open("heroes.json"), "w+") as f:
         f.write(json.dumps(heroes, sort_keys=True, indent=4))
 
 
